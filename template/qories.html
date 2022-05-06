@@ -1,0 +1,31 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block content %}
+
+<aside>
+    <div class="qories">
+        <h1>QORILAR RO'YXATI:</h1> <hr style="margin-top: 20px;">
+        <div class="qori-name">
+            {% for qori in qories %}
+                <a href="{{ qori.get_absolute_url }}">{{ qori.name }}</a>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="aside-bottom">
+        <h1>QUR'ONI KARIM HAQIDA</h1> <hr style="margin-top: 20px; margin-right: 30px;">
+        <div class="nav-box">
+            <img src="{%static 'image/nav.png'%}" alt="">
+            <h3>
+                ㅤㅤㅤㅤㅤQur’oni Karim 22 yil 2 oy 22 kun mobaynida Rasulullohga (sollallohu alayhi vasallam) oyatlar holida nozil bo‘lgan. Oyat Qur’oni Karim harflaridan bir fosila bilan ajralgan ilohiy kalomdir. Oyati karimalar orasida bir sahifaga yetadigan uzun oyatlar bo‘lishi bilan birga o‘rtacha uzunlikda va faqatgina bitta so‘zdan iborat bo‘lganlari ham bor. Biror vazn yoki she’riy ruhga ega emas. Qur’oni Karimning o‘z ruhi bor va u ilohiy vahiyning yuksak hikmatlarini jamlagan ilohiy kalomdir.
+                Makkiya deganda Rasulullohga (sollallohu alayhi vasallam) Makkada nozil bo‘lgan oyatlar, madaniya deganda esa Rasulullohga (sollallohu alayhi vasallam) Madinada nozil bo‘lgan oyatlar tushuniladi. Makkiya va madaniya oyatlari orasida quyidagicha farklar mavjud.
+                Makkada nozil bo‘lgan oyatlar aksar hollarda qisqadir. Madinada nozil bo‘lgan oyatlar esa asosan uzun suralar. Makka oyatlari asosan “Ya ayyuhan nas” (Ey, insonlar!) deb murojaat qilsa, Madina oyatlari asosan “Ya ayyuhal mo‘minun” (Ey, mo‘minlar!) deb boshlanadi.
+                Makka oyatlari insonlarni but-sanamlardan, yomonliklardan voz kechishga va tavhidga chakiradi. Yuksak axloqiy dasturlar bilan e’tiqodga va insoniylikka chorlaydi. Madina oyatlari esa e’tiqodlari tozalangan, ishongan insonlarga vazifalari nimadan iborat ekanini aytadi.
+                Sura oyatlar majmuidan iborat. Har bir sura bir kitob singari turli hikmatlarni o‘rgatadi.
+                Qur’oni Karim 114 suradan iborat. Eng uzun sura Baqara surasi bo‘lib, 286 oyatdan iborat. Eng qisqa sura esa Kavsar surasidir. U 3 oyatdan tashkil topgan.
+            </h3>
+        </div>
+    </div>
+</aside>
+{% endblock content %}

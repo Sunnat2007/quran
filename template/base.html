@@ -1,0 +1,100 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUR'ON.UZ</title>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+   <style>
+        body{
+            background: linear-gradient(101.56deg, #2C2C2C 1.56%, #1C1C1C 95.55%);
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        
+            <div class="logo">
+                <a href="{%url 'base'%}">
+                    <img src="{% static 'image/masjid.png' %}">
+                    <p>QUR'ON.UZ</p>
+                </a>
+            </div>
+            <ul class="header-link">
+                    <li><a class="active" href="{% url 'base' %}">Bosh sahifa</a></li>
+                    <li><a class="active" href="{% url 'qories' %}">Qur'on audio</a></li>
+                    <li><a class="active" href="{% url 'domlalar' %}">Maruzalar</a></li>
+            </ul>
+    </header>
+
+    {% block content %}
+
+    
+    <nav>
+        <div class="nav-left">
+            <h1>QUR'ONI KARIM HAQIDA</h1> <hr style="margin-top: 20px; margin-right: 30px;">
+            <div class="nav-box">
+                <img src="{%static 'image/nav.png'%}" alt="">
+                <h3>
+                    ㅤㅤㅤㅤㅤQur’oni Karim 22 yil 2 oy 22 kun mobaynida Rasulullohga (sollallohu alayhi vasallam) oyatlar holida nozil bo‘lgan. Oyat Qur’oni Karim harflaridan bir fosila bilan ajralgan ilohiy kalomdir. Oyati karimalar orasida bir sahifaga yetadigan uzun oyatlar bo‘lishi bilan birga o‘rtacha uzunlikda va faqatgina bitta so‘zdan iborat bo‘lganlari ham bor. Biror vazn yoki she’riy ruhga ega emas. Qur’oni Karimning o‘z ruhi bor va u ilohiy vahiyning yuksak hikmatlarini jamlagan ilohiy kalomdir.
+                    Makkiya deganda Rasulullohga (sollallohu alayhi vasallam) Makkada nozil bo‘lgan oyatlar, madaniya deganda esa Rasulullohga (sollallohu alayhi vasallam) Madinada nozil bo‘lgan oyatlar tushuniladi. Makkiya va madaniya oyatlari orasida quyidagicha farklar mavjud.
+                    Makkada nozil bo‘lgan oyatlar aksar hollarda qisqadir. Madinada nozil bo‘lgan oyatlar esa asosan uzun suralar. Makka oyatlari asosan “Ya ayyuhan nas” (Ey, insonlar!) deb murojaat qilsa, Madina oyatlari asosan “Ya ayyuhal mo‘minun” (Ey, mo‘minlar!) deb boshlanadi.
+                    Makka oyatlari insonlarni but-sanamlardan, yomonliklardan voz kechishga va tavhidga chakiradi. Yuksak axloqiy dasturlar bilan e’tiqodga va insoniylikka chorlaydi. Madina oyatlari esa e’tiqodlari tozalangan, ishongan insonlarga vazifalari nimadan iborat ekanini aytadi.
+                    Sura oyatlar majmuidan iborat. Har bir sura bir kitob singari turli hikmatlarni o‘rgatadi.
+                    Qur’oni Karim 114 suradan iborat. Eng uzun sura Baqara surasi bo‘lib, 286 oyatdan iborat. Eng qisqa sura esa Kavsar surasidir. U 3 oyatdan tashkil topgan.
+                </h3>
+            </div>
+        </div>
+        <div class="nav-right">
+            <h1>Eng ko'p ko'rilgan maruzalar</h1>
+            <hr>
+            {% for maruzas in maruzass %}
+        <div class="maruza-base">
+            <a href="{{ maruzas.get_absolute_url }}">
+                <img  src="{{ maruzas.image.url }}" alt="img">
+                <h5 style="color: aquamarine;">{{ maruzas.title }}</h5>
+                <div class="easy">
+                    <p>{{ maruzas.date }}</p> 
+                    <p style="color: silver; margin-left: 70%;"><i class="fa-regular fa-eye"></i> {{ maruzas.popular }}</p> 
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+        </div>
+    </nav>
+    <section>
+        <h1>RAMAZON OYI HAQIDA</h1> <hr style="margin-top: 20px;">
+            <div class="nav-box">
+                <img style="float: right; width: 250px; height: 250px; border-radius: 20%; " src="{%static 'image/Ramadan-kareem-.jpg'%}" alt="">
+                <h3>
+                    ㅤㅤㅤㅤㅤAlloh taologa beadad hamdu sanolar bo‘lsinki, o‘n bir oyga cho‘zilgan sog‘inch va ishtiyoqdan so‘ng nihoyat oylarning sultoni, ezgulik va xayr mavsumi, toatu ibodat fasli, saxovatu duo, tarovehu Qur’on oyi bo‘lmish muborak mohi Ramazon o‘zining tarovati, saxovati va barakoti bilan olamga tashrif buyurib, boshimiz uzra rahmat soyaboni bo‘lib turibdi.
+
+                    Jannatmakon o‘lkamizning mo‘min-musulmonlari oylarning eng ulug‘i va eng fazilatlisi bo‘lmish bu oyni bir olam shodligu quvonch bilan kutib olmoqdalar. Hamma bir-biridan shirin, bir-biridan ezgu orzu umidlar og‘ushida. Kimdir Ramazon ro‘zasini bu yil to‘liq tutib, o‘ttiz kun mobaynida tarovehlarda Qur’on xatmiga some’ bo‘lib, ko‘plab savob orttirish niyatida bo‘lsa, kimdir bu sanoqli kunlar mobaynida Qur’oni karimni to‘liq o‘qib tushirish ilinjida. Kimdir, bu bebaho va betakror toat mavsumida o‘zini har tomonlama isloh etib, xatolarini tuzatish, hasad, ginayu kudurat, xusumat kabi ma’naviy illatlardan qalbini musaffo etib, o‘zi uchun pokiza hayot sahifasini ochishni qasd qilgan bo‘lsa, yana kimdir xayrli ishlar uchun boshqa vaqtlardagidan ko‘ra ko‘proq ajru savoblar beriladigan bu qimmatli fursatlarni g‘animat bilib, mehru muruvvat, saxovat va silai rahm kabi olijanob ishlardan imkon qadar ko‘proq zaxira to‘plash maqsadida Ramazonning kelishiga intiq.
+
+                    Ha, azizlar, Ramazon mana shunday o‘xshashi yo‘q, fazilatda tengi yo‘q muborak oy. U ezgulik sayli, toat mavsumi, yaxshiliklar musobaqasidir. O‘tgan ulug‘larimiz Ramazonga shunday intiq bo‘lishar ediki, hatto oylar davomida “Ey Alloh, bizlarni Ramazonga eson-omon yetkaz!”, deya Yaratganga iltijolar qilardilar.
+                </h3>
+    </section>
+    {% endblock content %}
+    <footer>
+        <div class="logo" style="justify-content: center; display: flex;">
+            <a href="{% url 'base' %}">
+                <img src="{% static 'image/masjid.png' %}">
+                <p>QUR'ON.UZ</p>
+            </a>
+        </div>
+
+        <ul class="header-link" style="justify-content: center; margin-left: 150px;">
+                <li><a class="active" href="{% url 'base' %}">Bosh sahifa</a></li>
+                <li><a class="active" href="{% url 'qories' %}">Qur'on audio</a></li>
+                <li><a class="active" href="{% url 'domlalar' %}">Maruzalar</a></li>
+                <li><a style="padding-top: 2px; margin-left: 30%;" href="https://t.me/RevgariyUZ"><i class="fa-brands fa-telegram"></i></a></li>
+        </ul>
+        <p align="center" style="margin-top: 50px; color: bisque;">Barcha huquqlar himoyalangan. Saytdan ma'lumot olinganda manba ko'rsatilishi shart.</p>
+        <p align="center" style="color: bisque;">© QUR'ON.UZ 2022</p>
+    </footer>
+</body>
+</html>

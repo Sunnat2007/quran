@@ -1,0 +1,54 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block content %}
+
+
+    <aside>
+        
+            <div class="oyat-name">
+                
+                    <h1 >{{ suras.title_eng }}</h1> <h1>{{ suras.title_uz }}</h1> <h1>{{ suras.title_arabic }}</h1>
+                
+            </div>
+         <hr style="margin-top: 20px;">
+        <div class="oyatlar">
+            {% for oyat in oyatlar %}
+            <div class="oyat">
+                <div class="oyat1" >
+                    <div class="box1">
+                        <p>Oyat: </p>
+                        <p>Surada: <span>{{ oyat.tr_sura }}<span></p>
+                        <p>Quronda: <span>{{ oyat.tr_umumiy }}</span></p>
+                    </div>
+                    <div class="box1">
+                        <p>Sajda: </p>
+                        <p>Tavsiya etiladi: <span>{{ oyat.sajda_tafsiya }}</span></p>
+                        <p>Majburiy: <span>{{ oyat.sajda_majburiy }}</span></p>
+                    </div>
+                </div>
+                <div class="oyat2">
+                    <p>Arabcha matni: </p>
+                    <h3>{{ oyat.text_arabic}}</h3>
+                </div>
+                <div class="oyat3">
+                    <p>O'qilishi: </p>
+                    <h3>{{ oyat.text_uzb}}</h3>
+                </div>
+                <div class="oyat4">
+                    <p>Audio:</p>
+                    <audio src="{{ oyat.audio.url }}" controls>
+                        Sizning browzeringiz eski. Uni yangilang
+                    </audio>
+                    <p>Tarjimasi: </p>
+                    <h4 align="center">{{ oyat.text_tafsir}}</h4>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+       
+    </aside>
+
+
+{% endblock content %}

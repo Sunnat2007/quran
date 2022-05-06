@@ -1,0 +1,22 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block content %}
+
+
+    <aside>
+        <h1>Qori: {{ qori.name }}</h1> <hr style="margin-top: 20px;">
+
+        <div class="sura">
+            {% for sura in suras %}
+                <a href="{{ sura.get_absolute_url }}">
+                    <p>{{ sura.title_eng }}</p> 
+                    <hr>
+                    <p>{{ sura.title_arabic }} </p>
+                </a>
+            {% endfor %}
+        </div>
+    </aside>
+
+
+{% endblock content %}
