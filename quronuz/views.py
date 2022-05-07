@@ -43,6 +43,8 @@ def domla(request, slug):
 
 def maruza(request, slug):
     maruza = Maruza.objects.get(slug=slug)
+    maruza.popular += 1
+    maruza.save()
     return render(request, "maruza_detail.html", {
         'maruzalar': maruza,
         })
